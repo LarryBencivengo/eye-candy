@@ -1,0 +1,12 @@
+web:
+  restart: always
+  build: .
+  command: node --harmony src/app.js
+  ports:
+   - "3000:3000"
+  # volumes:
+  #  - .:/web
+  links:
+   - redis
+redis:
+  image: redis
